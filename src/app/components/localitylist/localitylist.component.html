@@ -1,0 +1,58 @@
+<div class="container mt-4">
+<!-- <button class="btn btn-success" (click)="addPage()">Add</button> -->
+
+<!-- Locality Form Code Started -->
+ <h3 *ngIf="msg" class="text-center">{{msg}}</h3>
+<form (ngSubmit)="onSubmit()" class="row g-2 align-items-center">
+<div class="col-auto">
+<label for="state">State</label>
+</div>
+<div class="col-auto">
+<select name="state" id="state" class="form-control" [(ngModel)]="locality.stateId">
+<option selected value="">Select State</option>
+<option *ngFor="let s of stateDropdown" [ngValue]="s.id">{{s.name}}</option>
+</select>
+</div>
+
+<div class="col-auto">
+    <label for="name">Locality Name</label>
+    </div>
+    <div class="col-auto">
+    <input name="name" id="name" class="form-control" [(ngModel)]="locality.name">
+
+</div>
+<br>
+<div class="col-auto">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+<!-- Locality Form Code Ended -->
+
+<table class="table table-striped table-hover table-success mt-5">
+<thead>
+    <th>S.No</th>
+    <th>Id</th>
+    <th>Code</th>
+    <th>Locality</th>
+    <th>State</th>
+    <th>Action</th>
+</thead>
+<tbody>
+    <tr *ngFor="let loc of localities;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{loc.id}}</td>
+        <td>{{loc.code}}</td>
+        <td>{{loc.name}}</td>
+        <td>{{loc.stateName}}</td>
+        <td>
+            <button class="btn btn-primary" (click)="editLocality(loc.id)">Edit</button>&nbsp;
+            <button class="btn btn-dander" (click)="deleteLocality(loc.id)">Delete</button>
+        </td>
+
+    </tr>
+</tbody>
+</table>
+
+
+
+</div>

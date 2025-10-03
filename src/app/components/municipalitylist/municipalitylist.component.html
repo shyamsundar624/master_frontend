@@ -1,0 +1,55 @@
+<div class="container mt-4">
+
+    <!-- Municipality add code started -->
+
+    <h3 *ngIf="msg" class="text-center">{{msg}}</h3>
+<form (ngSubmit)="onSubmit()" class="row g-2 align-items-center">
+<div class="col-auto">
+<label for="locality">Locality</label>
+</div>
+<div class="col-auto">
+<select name="locality" id="locality" class="form-control" [(ngModel)]="muni.localityId">
+<option selected value="">Select Locality</option>
+<option *ngFor="let s of localityDropdown" [ngValue]="s.id">{{s.name}}</option>
+</select>
+</div>
+
+<div class="col-auto">
+<label for="name">Municipality Name</label>
+</div>
+<div class="col-auto">
+<input type="text" name="name" id="name" class="form-control" [(ngModel)]="muni.name">
+</div>
+<br>
+<div class="col-auto">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+
+    <!-- Municipality add code Ended -->
+
+<!-- <button class=" btn btn-success" (click)="addPage()">Add</button> -->
+
+<table class="table table-striped table-hover table-success mt-5">
+<thead>
+    <th>S.No</th>
+    <th>Id</th>
+    <th>Code</th>
+    <th>Municipality</th>
+    <th>Action</th>
+</thead>
+<tbody>
+    <tr *ngFor="let mun of municipality; let i=index">
+<td>{{i+1}}</td>
+<td>{{mun.id}}</td>
+<td>{{mun.code}}</td>
+<td>{{mun.name}}</td>
+<td>{{mun.localityName}}</td>
+<td>
+    <button class="btn btn-primary" (click)="editMunicipality(mun.id)">Edit</button> &nbsp;
+    <button class="btn btn-danger" (click)="deleteMunicipality(mun.id)">Delete</button>
+</td>
+    </tr>
+</tbody>
+</table>
+</div>

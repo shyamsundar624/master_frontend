@@ -1,0 +1,88 @@
+<div class="container mt-5">
+
+  <!-- Country Add Code Started -->
+   <h3 *ngIf="msg" class="text-center">{{msg}}</h3>
+   
+ <form (ngSubmit)="onSubmit()" class="row g-2 align-items-center">
+  <div class="col-auto">
+    <label for="name" class="col-form-label">Name</label>
+  </div>
+  <div class="col-auto">
+    <input type="text"
+           class="form-control"
+           id="name"
+           name="name"
+           [(ngModel)]="country.name"
+           placeholder="Enter Name here">
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+  <!-- Country Add Code Endeded -->
+
+<!-- <button class="btn btn-success" (click)="addPage()">Add</button> -->
+
+<!-- <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#countryModalAdd">
+    Add
+  </button> -->
+
+<table class="table table-success table-striped table-hover mt-5">
+<thead>
+    <tr>
+        <th>S. No</th>
+        <th>ID</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let c of countries; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{c.id}}</td>
+        <td>{{c.name}}</td>
+        <td>{{c.code}}</td>
+        <td>
+            <!-- <button class="btn btn-info" (click)="editCountry(c.id)" data-bs-toggle="modal" data-bs-target="#countryModalEdit">Edit</button> &nbsp; -->
+            <button class="btn btn-info" (click)="editCountry(c.id)" >Edit</button> &nbsp;
+            <button class="btn btn-danger" (click)="deleteCountry(c.id)" >Delete</button>
+        </td>
+
+    </tr>
+</tbody>
+</table>
+
+<!-- Country Modal Add -->
+<!-- <div class="modal fade " id="countryModalAdd" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Country</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <app-countryadd></app-countryadd>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- Country Modal Add -->
+<!-- <div class="modal fade " id="countryModalEdit" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Country</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <app-countryedit [id]="id"></app-countryedit>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+</div>

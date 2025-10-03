@@ -1,0 +1,87 @@
+<div class="container mt-4">
+  <!-- <button class="btn btn-success" (click)="addPage()">Add</button> -->
+
+  <!-- State add Code Started -->
+  <h3 *ngIf="msg" class="text-center">{{msg}}</h3>
+
+  <form (ngSubmit)="onSubmit()" class="row g-2 align-items-center">
+    <div class="col-auto">
+      <label for="country">Country</label>
+    </div>
+    <div class="col-auto">
+
+      <select name="country" id="country" class="form-control" [(ngModel)]="state.countryId">
+        <option selected="" value="">Select Country</option>
+        <option *ngFor="let c of countryDropdown" [ngValue]="c.id">{{c.name}}</option>
+      </select>
+    </div>
+
+
+    <div class="col-auto">
+      <label class="name">State Name</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" name="name" id="name" class="form-control" [(ngModel)]="state.name">
+    </div>
+
+    <br>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  <!-- State add Code Ended -->
+
+  <table class=" table table-success table-striped table-hover mt-5">
+    <thead>
+      <th>S.No</th>
+      <th>Id</th>
+      <th>Code</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let state of states; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{state.id}}</td>
+        <td>{{state.code}}</td>
+        <td>{{state.name}}</td>
+        <td>{{state.countryName}}</td>
+        <td>
+          <!-- <button class="btn btn-info" (click)="editState(state.id)" data-bs-toggle="modal" data-bs-target="#stateModalEdit">Edit</button> &nbsp; -->
+          <button class="btn btn-info" (click)="editState(state.id)">Edit</button> &nbsp;
+          <button class="btn btn-danger" (click)="deletestate(state.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- State Modal Add -->
+  <!-- <div class="modal fade " id="stateModalAdd" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Country</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <app-stateadd></app-stateadd>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+  <!-- State Modal Add -->
+  <!-- <div class="modal fade " id="countryModalEdit" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Country</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <app-stateedit [id]="id"></app-stateedit>
+      </div>
+    </div>
+  </div>
+</div> -->

@@ -1,0 +1,25 @@
+<div class="container mt-4">
+<div class="col=md-6 offset-md-3">
+<h2>Create Locality</h2>
+<h3 *ngIf="msg">{{msg}}</h3>
+<form (ngSubmit)="onSubmit()">
+<div class="form-group">
+<label for="state">State</label>
+<select name="state" id="state" class="form-control" [(ngModel)]="locality.stateId">
+<option selected value="">Select State</option>
+<option *ngFor="let s of stateDropdown" [ngValue]="s.id">{{s.name}}</option>
+</select>
+</div>
+
+<div class="form-group">
+    <label for="name">Locality Name</label>
+    <input name="name" id="name" class="form-control" [(ngModel)]="locality.name">
+
+</div>
+<br>
+<div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+</div>
+</div>

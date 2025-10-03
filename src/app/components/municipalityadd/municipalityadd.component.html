@@ -1,0 +1,28 @@
+<div class="container mt-4">
+<div class="col-md-6 offset-md-3">
+<h2 class="text-center">Create Municipality</h2>
+<h3 *ngIf="msg">{{msg}}</h3>
+<form (ngSubmit)="onSubmit()" class="row g-2 align-items-center">
+<div class="col-auto">
+<label for="locality">Locality</label>
+</div>
+<div class="col-auto">
+<select name="locality" id="locality" class="form-control" [(ngModel)]="muni.localityId">
+<option selected value="">Select Locality</option>
+<option *ngFor="let s of localityDropdown" [ngValue]="s.id">{{s.name}}</option>
+</select>
+</div>
+
+<div class="col-auto">
+<label for="name">Municipality Name</label>
+</div>
+<div class="col-auto">
+<input type="text" name="name" id="name" class="form-control" [(ngModel)]="muni.name">
+</div>
+<br>
+<div class="col-auto">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+</div>
+</div>

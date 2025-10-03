@@ -1,0 +1,63 @@
+<div class="container mt-4">
+
+    <!-- Village add code Started -->
+     <h3 *ngIf="msg" class="text-center">{{msg}}</h3>
+<form (ngSubmit)="onSubmit()" class="row g-2 align-items-center">
+<div class="col-auto">
+<label for="locality">Locality</label>
+</div>
+<div class="col-auto">
+<select name="locality" id="locality" class="form-control" [(ngModel)]="vill.municipalityId">
+<option selected value="">Select Municipality</option>
+<option *ngFor="let s of muniDropdown" [ngValue]="s.id">{{s.name}}</option>
+</select>
+</div>
+
+<div class="col-auto">
+<label for="name">Village Name</label>
+</div>
+<div class="col-auto">
+<input type="text" name="name" id="name" class="form-control" [(ngModel)]="vill.name">
+</div>
+
+<div class="col-auto">
+<label for="name">Pin Code</label>
+</div>
+<div class="col-auto">
+<input type="text" name="pinCode" id="pinCode" class="form-control" [(ngModel)]="vill.pinCode">
+</div>
+<br>
+<div class="col-auto">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+    <!-- Village add code Ended -->
+
+<!-- <button class=" btn btn-success" (click)="addVillage()">Add</button> -->
+
+<table class="table table-striped table-hover table-success mt-5">
+<thead>
+    <th>S.No</th>
+    <th>Id</th>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Pin Code</th>
+    <th>Municipality</th>
+    <th>Action</th>
+</thead>
+<tbody>
+    <tr *ngFor="let v of villages; let i=index">
+<td>{{i+1}}</td>
+<td>{{v.id}}</td>
+<td>{{v.code}}</td>
+<td>{{v.name}}</td>
+<td>{{v.pinCode}}</td>
+<td>{{v.municipalityName}}</td>
+<td>
+    <button class="btn btn-primary" (click)="editVillage(v.id)">Edit</button> &nbsp;
+    <button class="btn btn-danger" (click)="deleteVillage(v.id)">Delete</button>
+</td>
+    </tr>
+</tbody>
+</table>
+</div>

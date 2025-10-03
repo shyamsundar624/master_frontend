@@ -1,0 +1,27 @@
+<div class="container mt-4">
+    <div class="col-md-6 offset-md-3">
+        <h2>Update State</h2>
+        <h3 *ngIf="msg">{{msg}}</h3>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select name="country" id="country" class="form-control" [(ngModel)]="state.countryId">
+                    <option selected="" value="">Select Country</option>
+                    <option *ngFor="let c of countryDropdown" [ngValue]="c.id">{{c.name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name">State Name</label>
+                <input type="text" name="name" id="name" [(ngModel)]="state.name" class="form-control">
+            </div>
+
+            <br>
+            <div>
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
