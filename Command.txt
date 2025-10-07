@@ -1,0 +1,69 @@
+ng new location-master-web
+
+ng g c components/countryedit
+
+ng g c components/countrylist
+
+ng g c components/countryadd
+
+ng g c components/localityadd
+
+ng g c components/localityedit
+
+ng g c components/localitylist
+
+ng g c components/municipalityadd
+
+ng g c components/municipalityedit
+
+ng g c components/municipalitylist
+
+ng g c components/stateadd
+
+ng g c components/stateedit
+
+ng g c components/statelist
+
+ng g c components/villageadd
+
+ng g c components/villageedit
+
+ng g c components/villagelist
+
+ng g c components/LocationTab
+
+
+ng g class entities/base-binding
+
+ng g class entities/country
+
+ng g class entities/locality
+
+ng g class entities/municipality
+
+ng g class entities/state
+
+ng g class entities/village
+
+
+ng g s services/country
+
+ng g s services/state
+
+ng g s services/locality
+
+ng g s services/municipality
+
+ng g s services/village
+
+
+
+--------------------Catalogue--------------------
+
+
+ng g c components/catalogueMaster
+
+ng g s services/catalogue
+
+ng g c components/CatalogueTab
+

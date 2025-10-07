@@ -16,6 +16,7 @@ import { VillagelistComponent } from './components/villagelist/villagelist.compo
 import { VillageaddComponent } from './components/villageadd/villageadd.component';
 import { VillageeditComponent } from './components/villageedit/villageedit.component';
 import { LocationTabComponent } from './components/location-tab/location-tab.component';
+import { CatalogueMasterComponent } from './components/catalogue-master/catalogue-master.component';
 
 export const routes: Routes = [
     {path:'App',component:AppComponent},
@@ -42,5 +43,7 @@ export const routes: Routes = [
     {path:'editvillage/:id',component:VillageeditComponent},
 
     {path:'locationMaster',component:LocationTabComponent},
+
+    {path:'catalogueMaster',component:CatalogueMasterComponent}
 
 ];

@@ -1,55 +1,118 @@
+<!-- Top Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Shyam Tech</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand fw-bold" href="#">Shyam Tech</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="locationMaster">Location Master</a>
-        </li>
-        
-      <!--   <li class="nav-item">
-          <a class="nav-link"  routerLink="country" routerLinkActive="active">Counrty</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"  routerLink="state" routerLinkActive="active">State</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"  routerLink="locality" routerLinkActive="active">Locality</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"  routerLink="municipality" routerLinkActive="active">Municipality</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link"  routerLink="village" routerLinkActive="active">Village</a>
-        </li> -->
-
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li> -->
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <!-- <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> -->
-    </div>
   </div>
 </nav>
 
+<!-- Main Layout -->
+<div class="container-fluid">
+  <div class="row">
+    
+    <!-- Sidebar -->
+    <div class="col-md-2 sidebar vh-100 p-0">
+      <div class="sidebar-header text-center py-3 text-white fw-bold border-bottom">
+        Menu
+      </div>
 
+      <div class="accordion" id="sidebarAccordion">
 
-<router-outlet />
+        <!-- Master -->
+        <div class="accordion-item bg-transparent border-0">
+          <h2 class="accordion-header" id="headingMaster">
+            <button class="accordion-button collapsed bg-dark text-white" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapseMaster"
+              aria-expanded="false" aria-controls="collapseMaster">
+              <i class="bi bi-gear me-2"></i> Master
+            </button>
+          </h2>
+          <div id="collapseMaster" class="accordion-collapse collapse"
+            aria-labelledby="headingMaster" data-bs-parent="#sidebarAccordion">
+            <div class="accordion-body p-0 submenu">
+              <ul class="nav flex-column">
+                <li><a routerLink="locationMaster" routerLinkActive="active"><i class="bi bi-flag me-2"></i>Location Master</a></li>
+                <li><a routerLink="catalogueMaster" routerLinkActive="active"><i class="bi bi-flag me-2"></i>Catalogue Master</a></li>
+                <li><a routerLink="country" routerLinkActive="active"><i class="bi bi-flag me-2"></i>Country</a></li>
+                <li><a routerLink="state" routerLinkActive="active"><i class="bi bi-geo me-2"></i>State</a></li>
+                <li><a routerLink="locality" routerLinkActive="active"><i class="bi bi-map me-2"></i>Locality</a></li>
+                <li><a routerLink="municipality" routerLinkActive="active"><i class="bi bi-building me-2"></i>Municipality</a></li>
+                <li><a routerLink="village" routerLinkActive="active"><i class="bi bi-house-door me-2"></i>Village</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service -->
+        <div class="accordion-item bg-transparent border-0">
+          <h2 class="accordion-header" id="headingService">
+            <button class="accordion-button collapsed bg-dark text-white" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapseService"
+              aria-expanded="false" aria-controls="collapseService">
+              <i class="bi bi-briefcase me-2"></i> Service
+            </button>
+          </h2>
+          <div id="collapseService" class="accordion-collapse collapse"
+            aria-labelledby="headingService" data-bs-parent="#sidebarAccordion">
+            <div class="accordion-body p-0 submenu">
+              <ul class="nav flex-column">
+                <li><a routerLink="service1" routerLinkActive="active"><i class="bi bi-tools me-2"></i>Service 1</a></li>
+                <li><a routerLink="service2" routerLinkActive="active"><i class="bi bi-hammer me-2"></i>Service 2</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Report -->
+        <div class="accordion-item bg-transparent border-0">
+          <h2 class="accordion-header" id="headingReport">
+            <button class="accordion-button collapsed bg-dark text-white" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapseReport"
+              aria-expanded="false" aria-controls="collapseReport">
+              <i class="bi bi-bar-chart-line me-2"></i> Report
+            </button>
+          </h2>
+          <div id="collapseReport" class="accordion-collapse collapse"
+            aria-labelledby="headingReport" data-bs-parent="#sidebarAccordion">
+            <div class="accordion-body p-0 submenu">
+              <ul class="nav flex-column">
+                <li><a routerLink="report1" routerLinkActive="active"><i class="bi bi-file-earmark-text me-2"></i>Report 1</a></li>
+                <li><a routerLink="report2" routerLinkActive="active"><i class="bi bi-file-earmark-bar-graph me-2"></i>Report 2</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- User -->
+        <div class="accordion-item bg-transparent border-0">
+          <h2 class="accordion-header" id="headingUser">
+            <button class="accordion-button collapsed bg-dark text-white" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapseUser"
+              aria-expanded="false" aria-controls="collapseUser">
+              <i class="bi bi-people me-2"></i> User
+            </button>
+          </h2>
+          <div id="collapseUser" class="accordion-collapse collapse"
+            aria-labelledby="headingUser" data-bs-parent="#sidebarAccordion">
+            <div class="accordion-body p-0 submenu">
+              <ul class="nav flex-column">
+                <li><a routerLink="userList" routerLinkActive="active"><i class="bi bi-list-ul me-2"></i>User List</a></li>
+                <li><a routerLink="addUser" routerLinkActive="active"><i class="bi bi-person-plus me-2"></i>Add User</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-10 main-content p-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+/* Sidebar base */
+.sidebar {
+  background-color: #212529;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-header {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  background: #343a40;
+}
+
+/* Links */
+.sidebar .nav-link {
+  color: #adb5bd;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #343a40;
+  color: #fff;
+}
+
+/* Submenu style */
+.submenu {
+  background-color: #2b3035;
+  transition: all 0.3s ease;
+}
+
+.submenu ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.submenu a {
+  color: #ced4da;
+  display: block;
+  padding: 8px 35px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.submenu a:hover {
+  background-color: #3a4045;
+  color: #fff;
+}
+
+/* Active link */
+.submenu a.active {
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Icons */
+.sidebar i {
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+/* Main content area */
+.main-content {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Smooth collapse animation */
+.collapse:not(.show) {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
